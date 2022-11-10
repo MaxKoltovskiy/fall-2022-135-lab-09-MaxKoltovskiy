@@ -21,5 +21,18 @@ int main()
   Coord3D vel = {0.25, 4, -9};
 
   move(&pos, &vel, 4.0);
-  std::cout << "Point with coordinate {12.5, 82, 63} moved by velocities {0.25, 4, -9} after time 4: {" << pos.x << ", " << pos.y << ", " << pos.z << "}\n";
+  std::cout << "Point with coordinate {12.5, 82, 63} \nMoved by velocities {0.25, 4, -9} \nAfter 4 seconds: {" << pos.x << ", " << pos.y << ", " << pos.z << "}\n";
+
+  std::cout<< "\n------------------------------------------\n\n";
+
+  
+  Coord3D* ppos = createCoord3D(20,25,30);
+  std::cout<< "Created Coord3D* ppos of values: " << (*ppos).x << ", " << (*ppos).y << ", "<< (*ppos).z << "\n";
+
+  Coord3D* pvel = createCoord3D(-4,8,-9.8);
+  std::cout<< "Created Coord3D* pvel of values: " << (*pvel).x << ", " << (*pvel).y << ", "<< (*pvel).z << "\n";
+
+  move(ppos, pvel, 3);
+
+  std::cout<< "\nPositions after 3 seconds: " << (*ppos).x << ", " << (*ppos).y << ", "<< (*ppos).z << "\n";
 }
